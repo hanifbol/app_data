@@ -146,7 +146,7 @@ CREATE TABLE `Penjualan` (
   CONSTRAINT `Penjualan_FK_2` FOREIGN KEY (`IdPengguna`) REFERENCES `Pengguna` (`IdPengguna`)
 );
 
-INSERT INTO binus_data.Penjualan (IdBarang,JumlahPenjualan,HargaJual,IdPelanggan,IdPengguna) VALUES
+INSERT INTO Penjualan (IdBarang,JumlahPenjualan,HargaJual,IdPelanggan,IdPengguna) VALUES
 	 (1,5.0,2000.0,1,1),
 	 (2,20.0,3000.0,1,1),
 	 (3,30.0,4000.0,1,1),
