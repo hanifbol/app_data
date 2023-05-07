@@ -111,4 +111,46 @@ class Barang extends Model {
 			throw $th;
 		}
 	}
+
+	public function dashboard()
+	{
+		try {
+			$query = "
+				SELECT 
+					b.IdBarang ,
+					b.NamaBarang ,
+					beli.TotalPembelian,
+					beli.TotalHargaBeli,
+					jual.TotalPenjualan, 
+					jual.TotalHargaJual,
+					beli.TotalPembelian - jual.TotalPenjualan Stok,
+					jual.TotalHargaJual - beli.TotalHargaBeli Laba
+				FROM Barang b 
+				LEFT JOIN (
+					SELECT
+						p.IdBarang, 
+						SUM(p.JumlahPembelian) TotalPembelian,
+						SUM(p.JumlahPembelian * p.HargaBeli) TotalHargaBeli
+					FROM Pembelian p 
+					GROUP BY 1
+				) beli
+				ON b.IdBarang = beli.IdBarang
+				LEFT JOIN (
+					SELECT
+						p.IdBarang, 
+						SUM(p.JumlahPenjualan) TotalPenjualan,
+						SUM(p.JumlahPenjualan * p.HargaJual) TotalHargaJual
+					FROM Penjualan p 
+					GROUP BY 1
+				) jual
+				ON b.IdBarang = jual.IdBarang
+				ORDER BY 1
+			";
+			$statement = $this->conn->prepare($query);
+			$statement->execute();
+			return $statement->fetchall(PDO::FETCH_ASSOC);
+		} catch (\Throwable $th) {
+			throw $th;
+		}
+	}
 }

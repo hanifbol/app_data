@@ -94,8 +94,24 @@ class Pembelian extends Model {
 			$statement->bindValue(":IdPembelian", $id, PDO::PARAM_INT);
 			$statement->execute();
 		} catch (\Throwable $th) {
-			// throw $th;
-			var_dump($th);
+			throw $th;
+		}
+	}
+
+	public function total()
+	{
+		try {
+			$query = "
+				SELECT 
+					COUNT(IdPembelian) JumlahTransaksi, 
+					SUM(JumlahPembelian * HargaBeli) TotalNilai
+				FROM Pembelian
+			";
+			$statement = $this->conn->prepare($query);
+			$statement->execute();
+			return $statement->fetch(PDO::FETCH_ASSOC);
+		} catch (\Throwable $th) {
+			throw $th;
 		}
 	}
 }

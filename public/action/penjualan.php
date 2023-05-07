@@ -41,6 +41,12 @@ if (isset($_POST['submit'])) {
 			// Delete specific sale
 			$penjualan->delete($_POST['idpenjualan']);
 			break;
+
+		case 'total':
+			// Get total of transaction
+			$data = $penjualan->total();
+			echo json_encode($data);
+			break;
 		
 		default:
 			header('Location: ' . url('index.php'));

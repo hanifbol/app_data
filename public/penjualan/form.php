@@ -3,99 +3,96 @@ include __DIR__ . "/../../src/containers/header.php";
 include __DIR__ . "/../../src/containers/sidebar.php";
 ?>
 
-<div class="col-xl-12">
-	<div class="row">
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="page-header" id="top">
-				<h2 class="pageheader-title">Penjualan </h2>
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xl-8 col-sm-12">
-			<div class="card">
-				<form id="penjualan-form">
-					<h5 class="card-header">Form Penjualan</h5>
-					<div class="card-body">
-						<input id="idpenjualan" name="idpenjualan" type="hidden">
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="form-group">
-									<label for="pelanggan" class="col-form-label">Nama Pelanggan</label>
-									<input id="pelanggan" type="text" class="form-control">
-									<input id="idpelanggan" type="hidden" name="idpelanggan">
-									<div id="data-pelanggan" class="card position-absolute" style="display: none; z-index: 1000; width: 90%;">
-										<div class="card-body p-0">
-											<div class="list-group list-group-flush">
-												<!-- Customers list goes here -->
-											</div>
-										</div>
-									</div>
-								</div>	
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-8">
-								<div class="form-group">
-									<label for="barang" class="col-form-label">Nama Barang</label>
-									<input id="barang" type="text" class="form-control">
-									<input id="idbarang" type="hidden" name="idbarang">
-									<div id="data-barang" class="card position-absolute" style="display: none; z-index: 1000; width: 90%;">
-										<div class="card-body p-0">
-											<div class="list-group list-group-flush">
-												<!-- Items list goes here -->
-											</div>
-										</div>
-									</div>
-								</div>	
-							</div>
-							<div class="col-lg-4">
-								<div class="form-group">
-									<label for="stok" class="col-form-label">Stok</label>
-									<input id="stok" type="text" class="form-control" disabled>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="jumlah" class="col-form-label">Jumlah Penjualan</label>
-									<input id="jumlah" name="jumlah" type="text" class="form-control">
-								</div>	
-							</div>
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="harga" class="col-form-label">Harga Satuan</label>
-									<input id="harga" name="harga" type="text" class="form-control">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="form-group">
-									<label for="total-harga" class="col-form-label">Total Harga</label>
-									<input id="total-harga" type="text" class="form-control" disabled>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="card-footer">
-						<div class="row">
-							<div class="col-lg-12">
-								<input type="hidden" name="submit" value="<?php echo $_POST['submit']; ?>">
-								<button class="btn btn-primary" type="submit">Simpan</button>
-								<?php if ($_SESSION['submit'] == 'update') { ?>
-									<button id="btn-delete" class="btn btn-danger" data-toggle="modal" data-target="#confirmation-modal">Hapus Penjualan</button>
-								<?php } ?>
-							</div>
-						</div>
-					</div>
-				</form>
-			</div>
+<div class="row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+		<div class="page-header" id="top">
+			<h2 class="pageheader-title">Penjualan </h2>
 		</div>
 	</div>
 </div>
-
+<div class="row">
+	<div class="col-xl-8 col-sm-12">
+		<div class="card">
+			<form id="penjualan-form">
+				<h5 class="card-header">Form Penjualan</h5>
+				<div class="card-body">
+					<input id="idpenjualan" name="idpenjualan" type="hidden">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="pelanggan" class="col-form-label">Nama Pelanggan</label>
+								<input id="pelanggan" type="text" class="form-control">
+								<input id="idpelanggan" type="hidden" name="idpelanggan">
+								<div id="data-pelanggan" class="card position-absolute" style="display: none; z-index: 1000; width: 90%;">
+									<div class="card-body p-0">
+										<div class="list-group list-group-flush">
+											<!-- Customers list goes here -->
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-8">
+							<div class="form-group">
+								<label for="barang" class="col-form-label">Nama Barang</label>
+								<input id="barang" type="text" class="form-control">
+								<input id="idbarang" type="hidden" name="idbarang">
+								<div id="data-barang" class="card position-absolute" style="display: none; z-index: 1000; width: 90%;">
+									<div class="card-body p-0">
+										<div class="list-group list-group-flush">
+											<!-- Items list goes here -->
+										</div>
+									</div>
+								</div>
+							</div>	
+						</div>
+						<div class="col-lg-4">
+							<div class="form-group">
+								<label for="stok" class="col-form-label">Stok</label>
+								<input id="stok" type="text" class="form-control" disabled>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="jumlah" class="col-form-label">Jumlah Penjualan</label>
+								<input id="jumlah" name="jumlah" type="text" class="form-control">
+							</div>	
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="harga" class="col-form-label">Harga Satuan</label>
+								<input id="harga" name="harga" type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="total-harga" class="col-form-label">Total Harga</label>
+								<input id="total-harga" type="text" class="form-control" disabled>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div class="row">
+						<div class="col-lg-12">
+							<input type="hidden" name="submit" value="<?php echo $_POST['submit']; ?>">
+							<button class="btn btn-primary" type="submit">Simpan</button>
+							<?php if ($_SESSION['submit'] == 'update') { ?>
+								<button id="btn-delete" class="btn btn-danger" data-toggle="modal" data-target="#confirmation-modal">Hapus Penjualan</button>
+							<?php } ?>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
 <?php if ($_SESSION['submit'] == 'update') { ?>
 	<!-- Delete Confirmation Modal -->

@@ -3,65 +3,63 @@ include __DIR__ . "/../../src/containers/header.php";
 include __DIR__ . "/../../src/containers/sidebar.php";
 ?>
 
-<div class="col-xl-12">
-	<div class="row">
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="page-header" id="top">
-				<h2 class="pageheader-title">Pemasok </h2>
-			</div>
+<div class="row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+		<div class="page-header" id="top">
+			<h2 class="pageheader-title">Pemasok </h2>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xl-8 col-sm-12">
-			<div class="card">
-				<form id="pemasok-form">
-					<h5 class="card-header">Form Pemasok</h5>
-					<div class="card-body">
-						<input id="idpemasok" name="idpemasok" type="hidden">
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="form-group">
-									<label for="pemasok" class="col-form-label">Nama Pemasok</label>
-									<input id="pemasok" name="pemasok" type="text" class="form-control">
-								</div>	
+</div>
+<div class="row">
+	<div class="col-xl-8 col-sm-12">
+		<div class="card">
+			<form id="pemasok-form">
+				<h5 class="card-header">Form Pemasok</h5>
+				<div class="card-body">
+					<input id="idpemasok" name="idpemasok" type="hidden">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="pemasok" class="col-form-label">Nama Pemasok</label>
+								<input id="pemasok" name="pemasok" type="text" class="form-control">
+							</div>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="alamat" class="col-form-label">Alamat</label>
+								<textarea id="alamat" name="alamat" class="form-control"></textarea>
+							</div>	
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="telepon" class="col-form-label">No Telepon</label>
+								<input id="telepon" name="telepon" type="text" class="form-control">
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="form-group">
-									<label for="alamat" class="col-form-label">Alamat</label>
-									<textarea id="alamat" name="alamat" class="form-control"></textarea>
-								</div>	
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="telepon" class="col-form-label">No Telepon</label>
-									<input id="telepon" name="telepon" type="text" class="form-control">
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="email" class="col-form-label">Email</label>
-									<input id="email" name="email" type="text" class="form-control">
-								</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="email" class="col-form-label">Email</label>
+								<input id="email" name="email" type="text" class="form-control">
 							</div>
 						</div>
 					</div>
-					<div class="card-footer">
-						<div class="row">
-							<div class="col-lg-12">
-								<input type="hidden" name="submit" value="<?php echo $_POST['submit']; ?>">
-								<button class="btn btn-primary" type="submit">Simpan</button>
-								<?php if ($_POST['submit'] == 'update') { ?>
-									<button id="btn-delete" class="btn btn-danger" data-toggle="modal" data-target="#confirmation-modal">Hapus Pemasok</button>
-								<?php } ?>
-							</div>
+				</div>
+				<div class="card-footer">
+					<div class="row">
+						<div class="col-lg-12">
+							<input type="hidden" name="submit" value="<?php echo $_POST['submit']; ?>">
+							<button class="btn btn-primary" type="submit">Simpan</button>
+							<?php if ($_POST['submit'] == 'update') { ?>
+								<button id="btn-delete" class="btn btn-danger" data-toggle="modal" data-target="#confirmation-modal">Hapus Pemasok</button>
+							<?php } ?>
 						</div>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

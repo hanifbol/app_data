@@ -51,6 +51,12 @@ if (isset($_POST['submit'])) {
 			$stock = $barang->stock($_POST['idbarang'], $_POST['idpenjualan']);
 			echo $stock;
 			break;
+
+		case 'dashboard';
+			// Show data for dashboard
+			$data = $barang->dashboard();
+			echo json_encode(['data' => $data]);
+			break;
 		
 		default:
 			header('Location: ' . url('index.php'));

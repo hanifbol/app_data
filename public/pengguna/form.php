@@ -14,97 +14,95 @@ if ($_POST['submit'] == 'new') {
 }
 ?>
 
-<div class="col-xl-12">
-	<div class="row">
-		<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="page-header" id="top">
-				<h2 class="pageheader-title">Account Management </h2>
-			</div>
+<div class="row">
+	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+		<div class="page-header" id="top">
+			<h2 class="pageheader-title">Account Management </h2>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-xl-8 col-sm-12">
-			<div class="card">
-				<form id="user-form">
-					<h5 class="card-header">Form Pengguna</h5>
-					<div class="card-body">
-						<input id="userid" name="userid" type="hidden">
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="username" class="col-form-label">Nama Pengguna</label>
-									<input id="username" name="username" type="text" class="form-control" disabled>
-								</div>		
-							</div>	
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="access" class="col-form-label">Hak Akses</label>
-									<select id="access" class="form-control" disabled></select>
-									<input id="accessid" type="hidden" name="accessid" value="1">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="password" class="col-form-label">Password</label>
-									<input id="password" type="password" name="password" class="form-control" placeholder="password">
-									<p id="msg-password">Kosongkan bila tidak ingin mengubah password.</p>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="confirm" class="col-form-label">&nbsp;</label>
-									<input id="confirm" type="password" class="form-control" placeholder="konfirmasi password">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="firstname" class="col-form-label">Nama</label>
-									<input id="firstname" type="text" name="firstname" class="form-control" required>
-									<p>Nama depan</p>
-								</div>
-							</div>
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="lastname" class="col-form-label">&nbsp;</label>
-									<input id="lastname" type="text" name="lastname" class="form-control">
-									<p>Nama belakang</p>
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-6">
-								<div class="form-group">
-									<label for="phone" class="col-form-label">No Handphone</label>
-									<input id="phone" type="text" name="phone" class="form-control" >
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-lg-12">
-								<div class="form-group">
-									<label for="address" class="col-form-label">Alamat</label>
-									<textarea id="address" name="address" class="form-control"></textarea>
-								</div>
+</div>
+<div class="row">
+	<div class="col-xl-8 col-sm-12">
+		<div class="card">
+			<form id="user-form">
+				<h5 class="card-header">Form Pengguna</h5>
+				<div class="card-body">
+					<input id="userid" name="userid" type="hidden">
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="username" class="col-form-label">Nama Pengguna</label>
+								<input id="username" name="username" type="text" class="form-control" disabled>
+							</div>		
+						</div>	
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="access" class="col-form-label">Hak Akses</label>
+								<select id="access" class="form-control" disabled></select>
+								<input id="accessid" type="hidden" name="accessid" value="1">
 							</div>
 						</div>
 					</div>
-					<div class="card-footer">
-						<div class="row">
-							<div class="col-lg-12">
-								<input type="hidden" name="submit" value="<?php echo $type; ?>">
-								<button class="btn btn-primary" type="submit">Simpan</button>
-								<?php if (($type == 'update') && ($userid != $_SESSION['IdPengguna'])) { ?>
-									<button id="btn-delete" class="btn btn-danger" data-toggle="modal" data-target="#confirmation-modal">Hapus User</button>
-								<?php } ?>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="password" class="col-form-label">Password</label>
+								<input id="password" type="password" name="password" class="form-control" placeholder="password">
+								<p id="msg-password">Kosongkan bila tidak ingin mengubah password.</p>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="confirm" class="col-form-label">&nbsp;</label>
+								<input id="confirm" type="password" class="form-control" placeholder="konfirmasi password">
 							</div>
 						</div>
 					</div>
-				</form>
-			</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="firstname" class="col-form-label">Nama</label>
+								<input id="firstname" type="text" name="firstname" class="form-control" required>
+								<p>Nama depan</p>
+							</div>
+						</div>
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="lastname" class="col-form-label">&nbsp;</label>
+								<input id="lastname" type="text" name="lastname" class="form-control">
+								<p>Nama belakang</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6">
+							<div class="form-group">
+								<label for="phone" class="col-form-label">No Handphone</label>
+								<input id="phone" type="text" name="phone" class="form-control" >
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="form-group">
+								<label for="address" class="col-form-label">Alamat</label>
+								<textarea id="address" name="address" class="form-control"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					<div class="row">
+						<div class="col-lg-12">
+							<input type="hidden" name="submit" value="<?php echo $type; ?>">
+							<button class="btn btn-primary" type="submit">Simpan</button>
+							<?php if (($type == 'update') && ($userid != $_SESSION['IdPengguna'])) { ?>
+								<button id="btn-delete" class="btn btn-danger" data-toggle="modal" data-target="#confirmation-modal">Hapus User</button>
+							<?php } ?>
+						</div>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

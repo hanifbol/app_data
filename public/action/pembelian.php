@@ -41,6 +41,12 @@ if (isset($_POST['submit'])) {
 			// Delete specific purchase
 			$pembelian->delete($_POST['idpembelian']);
 			break;
+
+		case 'total':
+			// Get total of transaction
+			$data = $pembelian->total();
+			echo json_encode($data);
+			break;
 		
 		default:
 			header('Location: ' . url('index.php'));
